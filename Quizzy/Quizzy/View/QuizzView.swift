@@ -42,12 +42,19 @@ struct QuizzView: View {
     // Boolean to disable the buttons
     @State var disable = false
     
+    // Colors
+    let myColors = MyColors()
+    
+    // Corner radius
+    let cornerRadius: CGFloat = 25.0
+    let smallCornerRadius: CGFloat = 10.0
+    
     // View
     var body: some View {
         
         ZStack{
             //Background
-            Rectangle().foregroundColor(Color("MainColor")).ignoresSafeArea()
+            Rectangle().foregroundColor(Color(myColors.mainColor)).ignoresSafeArea()
             
             VStack{
                 
@@ -58,25 +65,28 @@ struct QuizzView: View {
                         Spacer()
                         // Score
                         Text("Score: \(viewModel.score)")
-                    }.padding()
+                    }.padding(10)
                     
-                    // Question difficulty
-                    HStack{
-                        Image(systemName: "star.fill").foregroundColor(Color("Color3"))
-                        Image(systemName: "star.fill")
-                            .foregroundColor(viewModel.difficultyArray[questionNumber] == "medium" ? Color("Color3") : viewModel.difficultyArray[questionNumber] == "hard" ? Color("Color3") : Color("Color2"))
-                        Image(systemName: "star.fill")
-                            .foregroundColor(viewModel.difficultyArray[questionNumber] == "hard" ? Color("Color3") : Color("Color2"))
-                    }
                     
                     Spacer()
                     
                     ZStack{
-                        Rectangle().foregroundColor(.white)
+                        RoundedRectangle(cornerRadius: cornerRadius).foregroundColor(Color(myColors.questionColor))
                         
                         VStack{
+                            // Question difficulty
+                            HStack{
+                                Image(systemName: "star.fill").foregroundColor(Color(myColors.darkBlueColor))
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(viewModel.difficultyArray[questionNumber] == "medium" ? Color(myColors.darkBlueColor) : viewModel.difficultyArray[questionNumber] == "hard" ? Color(myColors.darkBlueColor) : Color(myColors.lightBlueColor))
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(viewModel.difficultyArray[questionNumber] == "hard" ? Color(myColors.darkBlueColor) : Color(myColors.lightBlueColor))
+                            }.padding()
+                            
+                            Spacer()
+                            
                             // Question
-                            Text(viewModel.questionArray[questionNumber])
+                            Text(viewModel.questionArray[questionNumber]).padding()
 
                             // Answers
                             HStack {
@@ -92,11 +102,13 @@ struct QuizzView: View {
 
                                     }, label: {
                                         ZStack{
-                                            RoundedRectangle(cornerRadius: 25.0)
-                                                .foregroundColor(correct0 ? Color("CorrectColor") : wrong0 ? Color("WrongColor") : Color("Color3"))
+                                            RoundedRectangle(cornerRadius: smallCornerRadius)
+                                                .foregroundColor(correct0 ? Color(myColors.correctColor) : wrong0 ? Color(myColors.wrongColor) : Color(myColors.darkBlueColor))
                                                 
                                             Text(viewModel.answerArray[questionNumber][0]).minimumScaleFactor(0.2)
-                                        }.frame(height: 50).padding()
+                                        }.frame(height: 50)
+                                        .padding(.leading, 10)
+
                                     })
                                     .disabled(disable)
                                     
@@ -108,11 +120,13 @@ struct QuizzView: View {
                                         
                                     }, label: {
                                         ZStack{
-                                            RoundedRectangle(cornerRadius: 25.0)
-                                                .foregroundColor(correct1 ? Color("CorrectColor") : wrong1 ? Color("WrongColor") : Color("Color3"))
+                                            RoundedRectangle(cornerRadius: smallCornerRadius)
+                                                .foregroundColor(correct1 ? Color(myColors.correctColor) : wrong1 ? Color(myColors.wrongColor) : Color(myColors.darkBlueColor))
                                                 
                                             Text(viewModel.answerArray[questionNumber][1]).minimumScaleFactor(0.2)
-                                        }.frame(height: 50).padding()
+                                        }.frame(height: 50)
+                                        .padding(.leading, 10)
+                                        
                                     })
                                     .disabled(disable)
                                 }
@@ -127,11 +141,13 @@ struct QuizzView: View {
 
                                     }, label: {
                                         ZStack{
-                                            RoundedRectangle(cornerRadius: 25.0)
-                                                .foregroundColor(correct2 ? Color("CorrectColor") : wrong2 ? Color("WrongColor") : Color("Color3"))
+                                            RoundedRectangle(cornerRadius: smallCornerRadius)
+                                                .foregroundColor(correct2 ? Color(myColors.correctColor) : wrong2 ? Color(myColors.wrongColor) : Color(myColors.darkBlueColor))
                                                 
                                             Text(viewModel.answerArray[questionNumber][2]).minimumScaleFactor(0.2)
-                                        }.frame(height: 50).padding()
+                                        }.frame(height: 50)
+                                        .padding(.trailing, 10)
+                                        
                                     })
                                     .disabled(disable)
                                     
@@ -143,15 +159,19 @@ struct QuizzView: View {
 
                                     }, label: {
                                         ZStack{
-                                            RoundedRectangle(cornerRadius: 25.0)
-                                                .foregroundColor(correct3 ? Color("CorrectColor") : wrong3 ? Color("WrongColor") : Color("Color3"))
+                                            RoundedRectangle(cornerRadius: smallCornerRadius)
+                                                .foregroundColor(correct3 ? Color(myColors.correctColor) : wrong3 ? Color(myColors.wrongColor) : Color(myColors.darkBlueColor))
                                                 
                                             Text(viewModel.answerArray[questionNumber][3]).minimumScaleFactor(0.2)
-                                        }.frame(height: 50).padding()
+                                        }.frame(height: 50)
+                                        .padding(.trailing, 10)
+                                        
                                     })
                                     .disabled(disable)
                                 }
                             }
+                            
+                            Spacer()
                         }
                         .animation(Animation.easeInOut)
                         
@@ -174,25 +194,23 @@ struct QuizzView: View {
                             
                         }, label: {
                             ZStack{
-                                RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color("Color3"))
+                                RoundedRectangle(cornerRadius: cornerRadius).foregroundColor(Color(myColors.darkBlueColor))
                                     .frame(height: 50)
                                 Text("Next question")
                             }.padding()
                         })
                     } else {
-                        // Done button (TODO: Change destination)
+                        // Done button
                         NavigationLink(
-                            destination: MainView(),
+                            destination: EndQuizzView(),
                             label: {
                                 ZStack{
-                                    RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color("Color3"))
+                                    RoundedRectangle(cornerRadius: cornerRadius).foregroundColor(Color(myColors.darkBlueColor))
                                         .frame(height: 50)
                                     Text("Done")
                                 }.padding()
                             })
                     }
-                    
-                    
                 }
                 
                 
@@ -210,14 +228,11 @@ struct QuizzView: View {
                     
                     Pie(startAngle: Angle.degrees(-90), endAngle: Angle.degrees(-animatedCountDown*360-90), clockwise: true)
                         .frame(width: 100, height: 100)
-                        .foregroundColor(Color("Color3"))
+                        .foregroundColor(Color(myColors.darkBlueColor))
                         .onAppear(){
                         startBonusTimeAnimation()
                     }
                 }
-                
-
-                
                 
             }
             .padding()
@@ -232,8 +247,6 @@ struct QuizzView: View {
             // Launch the timer
             startTimer()
         }
-        
-
         
     }
     
@@ -277,6 +290,7 @@ struct QuizzView: View {
 //        }
     }
     
+    // Highlight good and wrong answers
     private func highlightCorrectAnswer(userAnswer: Int, questionNB: Int, correct: inout Bool, wrong: inout Bool){
         if userAnswer == viewModel.correctAnswerPosition[questionNB] {
             correct = true
@@ -299,7 +313,7 @@ struct QuizzView: View {
         }
     }
     
-    
+    // Reset all booleans and reactivate the buttons
     private func resetBools(){
         correct0 = false
         correct1 = false
@@ -313,7 +327,6 @@ struct QuizzView: View {
         // reactivate the buttons
         disable = false
     }
-    
 
 }
 

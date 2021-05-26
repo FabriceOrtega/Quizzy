@@ -11,17 +11,20 @@ struct MainView: View {
     // Scale for animantion
     @State var scale: CGFloat = 0
     
+    // Colors
+    let myColors = MyColors()
+    
     var body: some View {
         
         ZStack{
             //Background
-            Rectangle().foregroundColor(Color("MainColor")).ignoresSafeArea()
+            Rectangle().foregroundColor(Color(myColors.mainColor)).ignoresSafeArea()
             
             VStack{
                 Spacer()
                 
                 ZStack{
-                    Rectangle().foregroundColor(.white).frame(height: 200)
+                    Rectangle().foregroundColor(Color(myColors.questionColor)).frame(height: 200)
                     
                     VStack{
                         Text("Welcome to")
@@ -29,7 +32,7 @@ struct MainView: View {
 
                         Text("Quizzy")
                             .font(.custom("Cavalier-Bold", size: 100))
-                            .foregroundColor(Color("QuizzyColor"))
+                            .foregroundColor(Color(myColors.quizzyColor))
                         
                     }.scaleEffect(scale)
                     .onAppear {
@@ -50,7 +53,7 @@ struct MainView: View {
                     destination: StartQuizzView(),
                     label: {
                         ZStack{
-                            RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color("Color3"))
+                            RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color(myColors.darkBlueColor))
                                 .frame(height: 50)
                             Text("Start quizz")
                         }.padding()
@@ -60,7 +63,7 @@ struct MainView: View {
                     destination: BestScoresView(),
                     label: {
                         ZStack{
-                            RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color("Color3"))
+                            RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color(myColors.darkBlueColor))
                                 .frame(height: 50)
                             Text("Best scores")
                         }.padding()
@@ -70,7 +73,7 @@ struct MainView: View {
 //
 //                }, label: {
 //                    ZStack{
-//                        RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color("Color3"))
+//                        RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color(myColors.darkBlueColor))
 //                            .frame(height: 50)
 //                        Text("Start game")
 //                    }.padding()
@@ -81,7 +84,7 @@ struct MainView: View {
 //
 //                }, label: {
 //                    ZStack{
-//                        RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color("Color3"))
+//                        RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color(myColors.darkBlueColor))
 //                            .frame(height: 50)
 //                        Text("Best scores")
 //                    }.padding()

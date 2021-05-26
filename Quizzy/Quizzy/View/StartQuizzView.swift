@@ -18,11 +18,14 @@ struct StartQuizzView: View {
     // Category
     @State var chosenCategory = "All"
     
+    // Colors
+    let myColors = MyColors()
+    
     var body: some View {
         
         ZStack{
             //Background
-            Rectangle().foregroundColor(Color("MainColor")).ignoresSafeArea()
+            Rectangle().foregroundColor(Color(myColors.mainColor)).ignoresSafeArea()
             
             VStack {
                 
@@ -57,7 +60,7 @@ struct StartQuizzView: View {
                 // Button to call the request and go to the quizz view
                 NavigationLink(destination: QuizzView(chosenDifficulty: $chosenDifficulty, chosenCategory: $chosenCategory)){
                     ZStack{
-                        RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color("Color3"))
+                        RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color(myColors.darkBlueColor))
                             .frame(height: 50)
                         Text("Start quizz")
                     }.padding()
