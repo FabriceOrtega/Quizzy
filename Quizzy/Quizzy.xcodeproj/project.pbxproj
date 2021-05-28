@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C14265D265D1FBD00A7B09D /* EndQuizzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14265C265D1FBD00A7B09D /* EndQuizzView.swift */; };
 		1C1C2CA8265D015700304E23 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C2CA7265D015700304E23 /* Pie.swift */; };
 		1C5336FE265BA62900E8F117 /* StartQuizzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5336FD265BA62900E8F117 /* StartQuizzView.swift */; };
 		1C533700265BA64500E8F117 /* BestScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5336FF265BA64500E8F117 /* BestScoresView.swift */; };
@@ -17,7 +18,9 @@
 		1C53370D265BD38D00E8F117 /* QuizzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C53370C265BD38D00E8F117 /* QuizzView.swift */; };
 		1C53370F265BD4D200E8F117 /* QuizzViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C53370E265BD4D200E8F117 /* QuizzViewModel.swift */; };
 		1C533711265BF20F00E8F117 /* extension Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C533710265BF20F00E8F117 /* extension Binding.swift */; };
+		1C7F2D47265FC7D1004ADB8A /* BestScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F2D46265FC7D1004ADB8A /* BestScores.swift */; };
 		1C8F2920265A8812002D4996 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C8F291F265A8812002D4996 /* ThirstySoftRegular.otf */; };
+		1C92887C265EDBC7003A80C1 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C92887B265EDBC7003A80C1 /* MyColors.swift */; };
 		1C9A69A3265A4B8500B4F49C /* QuizzyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9A69A2265A4B8500B4F49C /* QuizzyApp.swift */; };
 		1C9A69A5265A4B8500B4F49C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9A69A4265A4B8500B4F49C /* MainView.swift */; };
 		1C9A69A7265A4B8700B4F49C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C9A69A6265A4B8700B4F49C /* Assets.xcassets */; };
@@ -27,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C14265C265D1FBD00A7B09D /* EndQuizzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndQuizzView.swift; sourceTree = "<group>"; };
 		1C1C2CA7265D015700304E23 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		1C5336FD265BA62900E8F117 /* StartQuizzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizzView.swift; sourceTree = "<group>"; };
 		1C5336FF265BA64500E8F117 /* BestScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScoresView.swift; sourceTree = "<group>"; };
@@ -37,7 +41,9 @@
 		1C53370C265BD38D00E8F117 /* QuizzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzView.swift; sourceTree = "<group>"; };
 		1C53370E265BD4D200E8F117 /* QuizzViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzViewModel.swift; sourceTree = "<group>"; };
 		1C533710265BF20F00E8F117 /* extension Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension Binding.swift"; sourceTree = "<group>"; };
+		1C7F2D46265FC7D1004ADB8A /* BestScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScores.swift; sourceTree = "<group>"; };
 		1C8F291F265A8812002D4996 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		1C92887B265EDBC7003A80C1 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
 		1C9A699F265A4B8500B4F49C /* Quizzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C9A69A2265A4B8500B4F49C /* QuizzyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzyApp.swift; sourceTree = "<group>"; };
 		1C9A69A4265A4B8500B4F49C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -76,6 +82,7 @@
 				1C533701265BAD8C00E8F117 /* QuizzResponse.swift */,
 				1C533703265BADE000E8F117 /* Question.swift */,
 				1C533705265BAEE600E8F117 /* Request.swift */,
+				1C7F2D46265FC7D1004ADB8A /* BestScores.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -94,8 +101,9 @@
 				1C1C2CA6265D013A00304E23 /* Sub views */,
 				1C9A69A4265A4B8500B4F49C /* MainView.swift */,
 				1C5336FD265BA62900E8F117 /* StartQuizzView.swift */,
-				1C5336FF265BA64500E8F117 /* BestScoresView.swift */,
 				1C53370C265BD38D00E8F117 /* QuizzView.swift */,
+				1C14265C265D1FBD00A7B09D /* EndQuizzView.swift */,
+				1C5336FF265BA64500E8F117 /* BestScoresView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,6 +113,7 @@
 			children = (
 				1C9A69A6265A4B8700B4F49C /* Assets.xcassets */,
 				1C9A69A2265A4B8500B4F49C /* QuizzyApp.swift */,
+				1C92887B265EDBC7003A80C1 /* MyColors.swift */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -301,9 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C53370D265BD38D00E8F117 /* QuizzView.swift in Sources */,
+				1C14265D265D1FBD00A7B09D /* EndQuizzView.swift in Sources */,
 				1C53370B265BC40500E8F117 /* String extension + HTML convert.swift in Sources */,
 				1C9A69A5265A4B8500B4F49C /* MainView.swift in Sources */,
 				1C533706265BAEE600E8F117 /* Request.swift in Sources */,
+				1C92887C265EDBC7003A80C1 /* MyColors.swift in Sources */,
 				1C533702265BAD8C00E8F117 /* QuizzResponse.swift in Sources */,
 				1C53370F265BD4D200E8F117 /* QuizzViewModel.swift in Sources */,
 				1C1C2CA8265D015700304E23 /* Pie.swift in Sources */,
@@ -312,6 +323,7 @@
 				1C9A69A3265A4B8500B4F49C /* QuizzyApp.swift in Sources */,
 				1C533711265BF20F00E8F117 /* extension Binding.swift in Sources */,
 				1C533700265BA64500E8F117 /* BestScoresView.swift in Sources */,
+				1C7F2D47265FC7D1004ADB8A /* BestScores.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

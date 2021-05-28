@@ -202,7 +202,7 @@ struct QuizzView: View {
                     } else {
                         // Done button
                         NavigationLink(
-                            destination: EndQuizzView(),
+                            destination: EndQuizzView(chosenCategory: $chosenCategory, score: $viewModel.score),
                             label: {
                                 ZStack{
                                     RoundedRectangle(cornerRadius: cornerRadius).foregroundColor(Color(myColors.darkBlueColor))
