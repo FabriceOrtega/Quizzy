@@ -92,7 +92,7 @@ struct MainView: View {
 //                })
             }
 
-        }
+        }.navigationBarHidden(true)
         
     }
 }

@@ -22,7 +22,7 @@ struct QuizzView: View {
     @State var questionNumber = 0
     
     // Question loaded
-    @State var questionsAreLoaded = false
+    @State var countDownOver = false
     
     //Timer
     @State var countDown = 3.0
@@ -42,6 +42,12 @@ struct QuizzView: View {
     // Boolean to disable the buttons
     @State var disable = false
     
+    // Question loaded
+    @State var questionLoaded = false
+    
+    // Alert
+    @State var showingAlert = false
+    
     // Colors
     let myColors = MyColors()
     
@@ -58,7 +64,8 @@ struct QuizzView: View {
             
             VStack{
                 
-                if questionsAreLoaded {
+                if countDownOver && questionLoaded {
+                    
                     HStack{
                         // Question number
                         Text("Question: \(questionNumber+1) / 10")
@@ -211,11 +218,36 @@ struct QuizzView: View {
                                 }.padding()
                             })
                     }
+
+                }
+                
+                // If the question are not been correctly loaded
+                if !questionLoaded && countDownOver {
+                    
+                    Text("No questions")
+                    
+                    NavigationLink(
+                        destination: (MainView().onAppear(){
+                            self.showingAlert = false
+                        }),
+                        label: {
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color(myColors.darkBlueColor))
+                                    .frame(height: 50)
+                                Text("Go back to Main screen")
+                            }.padding()
+                        }).onAppear(){
+                            showingAlert = true}
+                        .alert(isPresented: $showingAlert) {
+                            Alert(title: Text("No question loaded"),
+                                  message: Text("Please check your internet connexion"),
+                                  dismissButton: .default(Text("Got it!")))
+                        }
                 }
                 
                 
                 // Show the countdown
-                if !questionsAreLoaded {
+                if !countDownOver {
                     
                     Text(String(Int(countDown)))
                         .padding()
@@ -253,7 +285,8 @@ struct QuizzView: View {
     // Method to start the timer
     private func startTimer(){
         Timer.scheduledTimer(withTimeInterval: countDown, repeats: false) { (_) in
-            self.questionsAreLoaded = true
+            self.countDownOver = true
+            self.checkIfQuestionsAreLoaded()
         }
     }
     
@@ -327,6 +360,16 @@ struct QuizzView: View {
         // reactivate the buttons
         disable = false
     }
+    
+    // Check if question are laoded
+    private func checkIfQuestionsAreLoaded(){
+        if viewModel.questionArray.count == 0 {
+            questionLoaded = false
+        } else {
+            questionLoaded = true
+        }
+    }
+    
 
 }
 
