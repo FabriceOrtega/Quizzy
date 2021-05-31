@@ -69,27 +69,6 @@ struct MainView: View {
                         }.padding()
                     })
                 
-//                Button(action: {
-//
-//                }, label: {
-//                    ZStack{
-//                        RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color(myColors.darkBlueColor))
-//                            .frame(height: 50)
-//                        Text("Start game")
-//                    }.padding()
-//
-//                })
-//
-//                Button(action: {
-//
-//                }, label: {
-//                    ZStack{
-//                        RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color(myColors.darkBlueColor))
-//                            .frame(height: 50)
-//                        Text("Best scores")
-//                    }.padding()
-//
-//                })
             }
 
         }.navigationBarHidden(true)
