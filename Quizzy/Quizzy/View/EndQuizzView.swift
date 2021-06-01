@@ -77,18 +77,27 @@ struct EndQuizzView: View {
     
     // Method to check if best score is beaten
     func checkBestScore(){
-        if score > BestScores.bestScores.bestScoresByCategory[chosenCategory] ?? 0 {
-            highSocre = true
-        } else {
-            highSocre = false
+        
+        if let index = BestScores.bestScores.categories.firstIndex(of: chosenCategory){
+            if score > BestScores.bestScores.scores[index] {
+                highSocre = true
+            } else {
+                highSocre = false
+            }
         }
     }
     
     // Method to save best score
     func saveHighScore(){
         if highSocre {
-            BestScores.bestScores.bestScoresByCategory[chosenCategory] = score
-            BestScores.bestScores.bestUsersByCategory[chosenCategory] = name
+            
+            // Find array of the category
+            if let index = BestScores.bestScores.categories.firstIndex(of: chosenCategory) {
+                // Replace in both array at index
+                BestScores.bestScores.users[index] = name
+                BestScores.bestScores.scores[index] = score
+            }
+            
         }
     }
 }

@@ -31,6 +31,7 @@
 		1C9A69A7265A4B8700B4F49C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C9A69A6265A4B8700B4F49C /* Assets.xcassets */; };
 		1C9A69AA265A4B8700B4F49C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C9A69A9265A4B8700B4F49C /* Preview Assets.xcassets */; };
 		1C9A69B4265A4D9200B4F49C /* Cavalier-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C9A69B3265A4D9200B4F49C /* Cavalier-Bold.ttf */; };
+		1CA2C52A266518C700EE9E86 /* extension Array Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA2C529266518C700EE9E86 /* extension Array Codable.swift */; };
 		6AA4BE163D042A3EEFE3ADFB /* Pods_Quizzy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617BF2788216EDD85EE13F77 /* Pods_Quizzy.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		1C9A69A9265A4B8700B4F49C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1C9A69AB265A4B8700B4F49C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C9A69B3265A4D9200B4F49C /* Cavalier-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cavalier-Bold.ttf"; sourceTree = "<group>"; };
+		1CA2C529266518C700EE9E86 /* extension Array Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension Array Codable.swift"; sourceTree = "<group>"; };
 		617BF2788216EDD85EE13F77 /* Pods_Quizzy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quizzy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF14E5B4CE4E42E97C1DDE2 /* Pods-Quizzy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quizzy.release.xcconfig"; path = "Target Support Files/Pods-Quizzy/Pods-Quizzy.release.xcconfig"; sourceTree = "<group>"; };
 		E86C99F5A8D216F2DD1C5909 /* Pods-Quizzy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quizzy.debug.xcconfig"; path = "Target Support Files/Pods-Quizzy/Pods-Quizzy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				1C53370A265BC40500E8F117 /* String extension + HTML convert.swift */,
 				1C533710265BF20F00E8F117 /* extension Binding.swift */,
+				1CA2C529266518C700EE9E86 /* extension Array Codable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				1C14265D265D1FBD00A7B09D /* EndQuizzView.swift in Sources */,
 				1C7611642664EACD005D07AA /* QuizzCountDownView.swift in Sources */,
 				1C53370B265BC40500E8F117 /* String extension + HTML convert.swift in Sources */,
+				1CA2C52A266518C700EE9E86 /* extension Array Codable.swift in Sources */,
 				1C9A69A5265A4B8500B4F49C /* MainView.swift in Sources */,
 				1C533706265BAEE600E8F117 /* Request.swift in Sources */,
 				1C92887C265EDBC7003A80C1 /* MyColors.swift in Sources */,

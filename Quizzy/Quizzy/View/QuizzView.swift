@@ -92,12 +92,8 @@ struct QuizzView: View {
                     
                 }
                 
-                
-
-                
             }
             .padding()
-            
             
         }
         .navigationBarHidden(true)
@@ -118,8 +114,6 @@ struct QuizzView: View {
             self.checkIfQuestionsAreLoaded()
         }
     }
-    
-    
     
     // Check if question are laoded
     private func checkIfQuestionsAreLoaded(){
