@@ -96,6 +96,7 @@ struct QuizzView: View {
             .padding()
             
         }
+        .font(.custom("hiragino-kaku-gothic-std-w8", size: 20))
         .navigationBarHidden(true)
         .onAppear(){
             // Call the request

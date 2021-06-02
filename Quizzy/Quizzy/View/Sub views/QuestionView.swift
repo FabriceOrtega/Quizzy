@@ -25,6 +25,10 @@ struct QuestionView: View {
     // View model
     @State var viewModel: QuizzViewModel
     
+    // Animating the + and -
+//    @State var plusOpacity = 0.0
+//    @State var minusOpacity = 0.0
+    
     // Colors
     let myColors = MyColors()
     
@@ -40,7 +44,14 @@ struct QuestionView: View {
                 Text("Question: \(questionNumber+1) / 10")
                 Spacer()
                 // Score
-                Text("Score: \(viewModel.score)")
+                ZStack{
+                    Text("Score: \(viewModel.score)")
+//                    Text("+").opacity(plusOpacity)
+//                    Text("-").opacity(minusOpacity)
+                }
+                
+                
+                
             }.padding(10)
             
             

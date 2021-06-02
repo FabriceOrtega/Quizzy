@@ -64,57 +64,6 @@ class Request {
         }
     }
     
-
-    
-//    func getRequest(difficulty: String, category: String, completion: @escaping(Result<QuizzResponse, RequestError>) -> Void) {
-//
-//        // Attribute the number of category according the name
-//        let categoryNumber = attributeNumberToCategory(category: category)
-//
-//        // Update URL with the key and query
-//        // No difficulty and no category chosen
-//        if difficulty == "All" && category == "All" {
-//            url = URL(string: "https://opentdb.com/api.php?amount=10&type=multiple")
-//        }
-//
-//        // No category chosen
-//        else if category == "All" {
-//            url = URL(string: "https://opentdb.com/api.php?amount=10&type=multiple&difficulty=\(difficulty.lowercased())")
-//        }
-//
-//        // No difficulty chosen
-//        else if difficulty == "All" {
-//            url = URL(string: "https://opentdb.com/api.php?amount=10&type=multiple&category=\(categoryNumber)")
-//        }
-//
-//        // Both difficulty and category is chosen
-//        else {
-//            url = URL(string: "https://opentdb.com/api.php?amount=10&type=multiple&difficulty=\(difficulty.lowercased())&category=\(categoryNumber)")
-//        }
-//
-//        // Create the task
-//        let dataTask = session.dataTask(with: url!) {data, response, error in
-//            // check if data is available
-//            guard let jsonData = data else {
-//                completion(.failure(.noDataAvailable))
-//                return
-//            }
-//
-//
-//            // If data available, convert it thru the decoder
-//            do {
-//                let decoder = JSONDecoder()
-//                let quizzResponse = try decoder.decode(QuizzResponse.self, from: jsonData)
-//
-//                completion(.success(quizzResponse))
-//
-//                // If not ptossible to decode
-//            } catch {
-//                completion(.failure(.canNotProcessData))
-//            }
-//        }
-//        dataTask.resume()
-//    }
     
     // Method to attribute correct number to the category
     private func attributeNumberToCategory(category: String) -> Int {

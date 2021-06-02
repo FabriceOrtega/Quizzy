@@ -41,7 +41,7 @@ class QuizzViewModel: ObservableObject {
         }
     }
     
-    // User'answer
+    // User'answer (initialized at value 5 as can only be between 0 and 3)
     @Published var userAnswer = 5
     
     // Score
@@ -54,18 +54,6 @@ class QuizzViewModel: ObservableObject {
                 self.quizzResponse = data
             }
         }
-        
-        
-//        Request.request.getRequest(difficulty: difficulty, category: category) {[weak self] result in
-//            // Switch for succes or failure
-//            switch result {
-//            case .failure(let error):
-//                print(error)
-//            case .success(let quizzResponse):
-//                // if success, attribute the data
-//                self?.quizzResponse = quizzResponse
-//            }
-//        }
         
     }
     
@@ -127,7 +115,7 @@ class QuizzViewModel: ObservableObject {
     // Method to check the answer and attribute the points
     func checkAnswer(questionNumber: Int) {
         if userAnswer == correctAnswerPosition[questionNumber] {
-            switch quizzResponse?.results[questionNumber].difficulty {
+            switch difficultyArray[questionNumber] {
             case "easy":
                 score += 2
             case "medium":
@@ -138,7 +126,7 @@ class QuizzViewModel: ObservableObject {
                 score += 2
             }
         } else {
-            switch quizzResponse?.results[questionNumber].difficulty {
+            switch difficultyArray[questionNumber] {
             case "easy":
                 score -= 1
             case "medium":

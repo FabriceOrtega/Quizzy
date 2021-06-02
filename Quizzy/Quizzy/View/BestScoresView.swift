@@ -17,17 +17,7 @@ struct BestScoresView: View {
             //Background
             Rectangle().foregroundColor(Color(myColors.mainColor)).ignoresSafeArea()
             
-//            List {
-//                ForEach(BestScores.bestScores.bestScoresByCategory.sorted(by: <), id: \.key) { key, value in
-//                            Section(header: Text(key)) {
-//                                HStack{
-//                                    Text(BestScores.bestScores.bestUsersByCategory[key] ?? "No name")
-//                                    Spacer()
-//                                    Text("\(value)")
-//                                }
-//                            }.listRowBackground(Color(myColors.mainColor))
-//                        }
-//                    }
+
             
             List {
                 ForEach(BestScores.bestScores.categories.indices, id: \.self) { index in
@@ -41,7 +31,9 @@ struct BestScoresView: View {
                         }
                     }
             
-        }.navigationTitle("Best scores")
+        }
+        .font(.custom("hiragino-kaku-gothic-std-w8", size: 20))
+        .navigationTitle("Best scores")
     }
 }
 

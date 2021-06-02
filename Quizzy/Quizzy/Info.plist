@@ -24,6 +24,7 @@
 	<array>
 		<string>Cavalier-Bold.ttf</string>
 		<string>ThirstySoftRegular.otf</string>
+		<string>hiragino-kaku-gothic-std-w8.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

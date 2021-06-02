@@ -71,7 +71,9 @@ struct MainView: View {
                 
             }
 
-        }.navigationBarHidden(true)
+        }
+        .font(.custom("hiragino-kaku-gothic-std-w8", size: 20))
+        .navigationBarHidden(true)
         
     }
 }

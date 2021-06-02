@@ -71,7 +71,11 @@ struct AnswerButtonView: View {
     // Highlight good and wrong answers
     private func highlightCorrectAnswer(userAnswer: Int, questionNB: Int, correct: inout Bool, wrong: inout Bool){
         if userAnswer == viewModel.correctAnswerPosition[questionNB] {
+            // Highlight user's answer in green as correctly answered
             correct = true
+            
+            // Animate the score
+            
         } else {
             // Highlight user's answer in red and correct answer in green
             wrong = true
@@ -88,6 +92,8 @@ struct AnswerButtonView: View {
             default:
                 return
             }
+            
+            // Animate the score
         }
     }
     

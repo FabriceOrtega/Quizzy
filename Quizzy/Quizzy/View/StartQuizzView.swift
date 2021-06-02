@@ -67,7 +67,7 @@ struct StartQuizzView: View {
                 }
                 
             }
-        }
+        }.font(.custom("hiragino-kaku-gothic-std-w8", size: 20))
         
 
         
