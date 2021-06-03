@@ -26,8 +26,7 @@ struct QuestionView: View {
     @State var viewModel: QuizzViewModel
     
     // Animating the + and -
-//    @State var plusOpacity = 0.0
-//    @State var minusOpacity = 0.0
+    @State var scaleValue: CGFloat = 1.0
     
     // Colors
     let myColors = MyColors()
@@ -46,8 +45,22 @@ struct QuestionView: View {
                 // Score
                 ZStack{
                     Text("Score: \(viewModel.score)")
-//                    Text("+").opacity(plusOpacity)
-//                    Text("-").opacity(minusOpacity)
+                        .scaleEffect(scaleValue)
+                        .onChange(of: viewModel.score, perform: { _ in
+                            // Scale the score up
+                            withAnimation(.easeInOut(duration: 0.15)) {
+                                self.scaleValue = 1.35
+                            }
+                            // SCale the score down again
+                            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { _ in
+                                withAnimation(.spring()) {
+                                    self.scaleValue = 1.0
+                                }
+                            }
+                            
+                            
+                            
+                        })
                 }
                 
                 
@@ -70,7 +83,7 @@ struct QuestionView: View {
                              wrong3: $wrong3,
                              viewModel: viewModel)
             
-
+            
             Spacer()
             
             if questionNumber < 9 {
@@ -104,7 +117,7 @@ struct QuestionView: View {
                         }.padding()
                     })
             }
-
+            
         }
     }
     

@@ -20,22 +20,27 @@ struct QuizzCountDownView: View {
     let myColors = MyColors()
     
     var body: some View {
-        VStack{
+        ZStack{
+            
+            Pie(startAngle: Angle.degrees(-90), endAngle: Angle.degrees(-animatedCountDown*360-90), clockwise: true)
+                .frame(width: 220, height: 220)
+                .foregroundColor(Color(myColors.darkBlueColor))
+                .onAppear(){
+                startBonusTimeAnimation()
+            }
+            
+            Circle()
+                .frame(width: 190, height: 190)
+                .foregroundColor(Color(myColors.mainColor))
+            
             Text(String(Int(countDown)))
-                .padding()
-                .font(.largeTitle)
+                .font(.custom("hiragino-kaku-gothic-std-w8", size: 100))
                 .onReceive(timer) { _ in
                     if countDown > 0 {
                         countDown -= 1
                     }
                 }
             
-            Pie(startAngle: Angle.degrees(-90), endAngle: Angle.degrees(-animatedCountDown*360-90), clockwise: true)
-                .frame(width: 100, height: 100)
-                .foregroundColor(Color(myColors.darkBlueColor))
-                .onAppear(){
-                startBonusTimeAnimation()
-            }
         }
     }
     
@@ -52,5 +57,7 @@ struct QuizzCountDownView_Previews: PreviewProvider {
     static var previews: some View {
         QuizzCountDownView(countDown: .constant(3.0), animatedCountDown: .constant(3.0))
             .previewLayout(.sizeThatFits)
+            
+            
     }
 }

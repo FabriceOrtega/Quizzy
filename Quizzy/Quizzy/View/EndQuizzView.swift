@@ -46,8 +46,9 @@ struct EndQuizzView: View {
                         .foregroundColor(Color(myColors.quizzyColor))
                     
                     HStack{
-                        Text("Please enter your name").padding()
-                        TextField("Name", text: $name).padding()
+                        TextField("Please enter your name", text: $name)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
                     }
 
                     Spacer()
@@ -55,17 +56,20 @@ struct EndQuizzView: View {
                 
                 Spacer()
                 
-                NavigationLink(
-                    destination: (MainView().onAppear(){
-                        self.saveHighScore()
-                    }),
-                    label: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color(myColors.darkBlueColor))
-                                .frame(height: 50)
-                            Text("Go back to Main screen")
-                        }.padding()
-                    })
+                if name.count >= 2 || !highSocre {
+                    NavigationLink(
+                        destination: (MainView().onAppear(){
+                            self.saveHighScore()
+                        }),
+                        label: {
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 25.0).foregroundColor(Color(myColors.darkBlueColor))
+                                    .frame(height: 50)
+                                Text("Go back to Main screen")
+                            }.padding()
+                        })
+                }
+                
             }
         }
         .font(.custom("hiragino-kaku-gothic-std-w8", size: 20))

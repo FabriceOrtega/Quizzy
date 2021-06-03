@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C14265D265D1FBD00A7B09D /* EndQuizzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14265C265D1FBD00A7B09D /* EndQuizzView.swift */; };
 		1C1C2CA8265D015700304E23 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C2CA7265D015700304E23 /* Pie.swift */; };
+		1C309A8D26667C3E003ABFA2 /* hiragino-kaku-gothic-std-w8.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C309A8C26667C3E003ABFA2 /* hiragino-kaku-gothic-std-w8.otf */; };
 		1C40F9102664F9E800894507 /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40F90F2664F9E800894507 /* QuestionCardView.swift */; };
 		1C40F9122664FE7200894507 /* AnswerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40F9112664FE7200894507 /* AnswerButtonView.swift */; };
 		1C5336FE265BA62900E8F117 /* StartQuizzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5336FD265BA62900E8F117 /* StartQuizzView.swift */; };
@@ -32,12 +33,24 @@
 		1C9A69AA265A4B8700B4F49C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C9A69A9265A4B8700B4F49C /* Preview Assets.xcassets */; };
 		1C9A69B4265A4D9200B4F49C /* Cavalier-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C9A69B3265A4D9200B4F49C /* Cavalier-Bold.ttf */; };
 		1CA2C52A266518C700EE9E86 /* extension Array Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA2C529266518C700EE9E86 /* extension Array Codable.swift */; };
+		1CF6A1E12666479E00CFF43D /* QuizzyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6A1E02666479E00CFF43D /* QuizzyTests.swift */; };
 		6AA4BE163D042A3EEFE3ADFB /* Pods_Quizzy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617BF2788216EDD85EE13F77 /* Pods_Quizzy.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1CF6A1E32666479E00CFF43D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C9A6997265A4B8500B4F49C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C9A699E265A4B8500B4F49C;
+			remoteInfo = Quizzy;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1C14265C265D1FBD00A7B09D /* EndQuizzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndQuizzView.swift; sourceTree = "<group>"; };
 		1C1C2CA7265D015700304E23 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		1C309A8C26667C3E003ABFA2 /* hiragino-kaku-gothic-std-w8.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "hiragino-kaku-gothic-std-w8.otf"; sourceTree = "<group>"; };
 		1C40F90F2664F9E800894507 /* QuestionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCardView.swift; sourceTree = "<group>"; };
 		1C40F9112664FE7200894507 /* AnswerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButtonView.swift; sourceTree = "<group>"; };
 		1C5336FD265BA62900E8F117 /* StartQuizzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizzView.swift; sourceTree = "<group>"; };
@@ -63,6 +76,9 @@
 		1C9A69AB265A4B8700B4F49C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C9A69B3265A4D9200B4F49C /* Cavalier-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cavalier-Bold.ttf"; sourceTree = "<group>"; };
 		1CA2C529266518C700EE9E86 /* extension Array Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension Array Codable.swift"; sourceTree = "<group>"; };
+		1CF6A1DE2666479E00CFF43D /* QuizzyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizzyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CF6A1E02666479E00CFF43D /* QuizzyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzyTests.swift; sourceTree = "<group>"; };
+		1CF6A1E22666479E00CFF43D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		617BF2788216EDD85EE13F77 /* Pods_Quizzy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quizzy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF14E5B4CE4E42E97C1DDE2 /* Pods-Quizzy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quizzy.release.xcconfig"; path = "Target Support Files/Pods-Quizzy/Pods-Quizzy.release.xcconfig"; sourceTree = "<group>"; };
 		E86C99F5A8D216F2DD1C5909 /* Pods-Quizzy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quizzy.debug.xcconfig"; path = "Target Support Files/Pods-Quizzy/Pods-Quizzy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +90,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AA4BE163D042A3EEFE3ADFB /* Pods_Quizzy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CF6A1DB2666479E00CFF43D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				1C9A69A1265A4B8500B4F49C /* Quizzy */,
+				1CF6A1DF2666479E00CFF43D /* QuizzyTests */,
 				1C9A69A0265A4B8500B4F49C /* Products */,
 				885FC4E3CA0DB849C82B8310 /* Pods */,
 				DBBE2B2AE1C7E6D377690F07 /* Frameworks */,
@@ -159,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				1C9A699F265A4B8500B4F49C /* Quizzy.app */,
+				1CF6A1DE2666479E00CFF43D /* QuizzyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,10 +214,20 @@
 		1C9A69B1265A4BB900B4F49C /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				1C309A8C26667C3E003ABFA2 /* hiragino-kaku-gothic-std-w8.otf */,
 				1C9A69B3265A4D9200B4F49C /* Cavalier-Bold.ttf */,
 				1C8F291F265A8812002D4996 /* ThirstySoftRegular.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		1CF6A1DF2666479E00CFF43D /* QuizzyTests */ = {
+			isa = PBXGroup;
+			children = (
+				1CF6A1E02666479E00CFF43D /* QuizzyTests.swift */,
+				1CF6A1E22666479E00CFF43D /* Info.plist */,
+			);
+			path = QuizzyTests;
 			sourceTree = "<group>";
 		};
 		885FC4E3CA0DB849C82B8310 /* Pods */ = {
@@ -234,6 +269,24 @@
 			productReference = 1C9A699F265A4B8500B4F49C /* Quizzy.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1CF6A1DD2666479E00CFF43D /* QuizzyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CF6A1E72666479E00CFF43D /* Build configuration list for PBXNativeTarget "QuizzyTests" */;
+			buildPhases = (
+				1CF6A1DA2666479E00CFF43D /* Sources */,
+				1CF6A1DB2666479E00CFF43D /* Frameworks */,
+				1CF6A1DC2666479E00CFF43D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CF6A1E42666479E00CFF43D /* PBXTargetDependency */,
+			);
+			name = QuizzyTests;
+			productName = QuizzyTests;
+			productReference = 1CF6A1DE2666479E00CFF43D /* QuizzyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -245,6 +298,10 @@
 				TargetAttributes = {
 					1C9A699E265A4B8500B4F49C = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					1CF6A1DD2666479E00CFF43D = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 1C9A699E265A4B8500B4F49C;
 					};
 				};
 			};
@@ -262,6 +319,7 @@
 			projectRoot = "";
 			targets = (
 				1C9A699E265A4B8500B4F49C /* Quizzy */,
+				1CF6A1DD2666479E00CFF43D /* QuizzyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,8 +331,16 @@
 			files = (
 				1C9A69AA265A4B8700B4F49C /* Preview Assets.xcassets in Resources */,
 				1C9A69B4265A4D9200B4F49C /* Cavalier-Bold.ttf in Resources */,
+				1C309A8D26667C3E003ABFA2 /* hiragino-kaku-gothic-std-w8.otf in Resources */,
 				1C8F2920265A8812002D4996 /* ThirstySoftRegular.otf in Resources */,
 				1C9A69A7265A4B8700B4F49C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CF6A1DC2666479E00CFF43D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +417,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1CF6A1DA2666479E00CFF43D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CF6A1E12666479E00CFF43D /* QuizzyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1CF6A1E42666479E00CFF43D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C9A699E265A4B8500B4F49C /* Quizzy */;
+			targetProxy = 1CF6A1E32666479E00CFF43D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1C9A69AC265A4B8700B4F49C /* Debug */ = {
@@ -516,6 +598,46 @@
 			};
 			name = Release;
 		};
+		1CF6A1E52666479E00CFF43D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QSZM3JVR24;
+				INFOPLIST_FILE = QuizzyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabriceortega.QuizzyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quizzy.app/Quizzy";
+			};
+			name = Debug;
+		};
+		1CF6A1E62666479E00CFF43D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QSZM3JVR24;
+				INFOPLIST_FILE = QuizzyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabriceortega.QuizzyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quizzy.app/Quizzy";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -533,6 +655,15 @@
 			buildConfigurations = (
 				1C9A69AF265A4B8700B4F49C /* Debug */,
 				1C9A69B0265A4B8700B4F49C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CF6A1E72666479E00CFF43D /* Build configuration list for PBXNativeTarget "QuizzyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CF6A1E52666479E00CFF43D /* Debug */,
+				1CF6A1E62666479E00CFF43D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
