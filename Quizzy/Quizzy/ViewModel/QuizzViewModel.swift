@@ -70,45 +70,49 @@ class QuizzViewModel: ObservableObject {
         
         var answersForThisQuestion: [String] = []
         
-        // Position the correct answer accoring the correctAnswerPosition array
-        for i in 0...9 {
-            
-            print(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
-            
-            switch correctAnswerPosition[i]{
-            case 0:
-                answersForThisQuestion.append(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[0].decoded ?? "Incorrect answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[1].decoded ?? "Incorrect answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[2].decoded ?? "Incorrect answer")
-            case 1:
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[1].decoded ?? "Incorrect answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[0].decoded ?? "Incorrect answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[2].decoded ?? "Incorrect answer")
-            case 2:
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[0].decoded ?? "Incorrect answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[2].decoded ?? "Incorrect answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[1].decoded ?? "Incorrect answer")
-            case 3:
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[1].decoded ?? "Incorrect answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[2].decoded ?? "Incorrect answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[0].decoded ?? "Incorrect answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
-            default:
-                answersForThisQuestion.append(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[0].decoded ?? "Incorrect answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[1].decoded ?? "Incorrect answer")
-                answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[2].decoded ?? "Incorrect answer")
+        if quizzResponse?.results.count ?? 0 > 0 {
+            // Position the correct answer accoring the correctAnswerPosition array
+            for i in 0...9 {
+                
+                print(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
+                
+                switch correctAnswerPosition[i]{
+                case 0:
+                    answersForThisQuestion.append(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[0].decoded ?? "Incorrect answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[1].decoded ?? "Incorrect answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[2].decoded ?? "Incorrect answer")
+                case 1:
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[1].decoded ?? "Incorrect answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[0].decoded ?? "Incorrect answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[2].decoded ?? "Incorrect answer")
+                case 2:
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[0].decoded ?? "Incorrect answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[2].decoded ?? "Incorrect answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[1].decoded ?? "Incorrect answer")
+                case 3:
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[1].decoded ?? "Incorrect answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[2].decoded ?? "Incorrect answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[0].decoded ?? "Incorrect answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
+                default:
+                    answersForThisQuestion.append(quizzResponse?.results[i].correct_answer.decoded ?? "Correct answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[0].decoded ?? "Incorrect answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[1].decoded ?? "Incorrect answer")
+                    answersForThisQuestion.append(quizzResponse?.results[i].incorrect_answers[2].decoded ?? "Incorrect answer")
+                }
+                
+                if answersForThisQuestion != []{
+                    answerArray.append(answersForThisQuestion)
+                    answersForThisQuestion = []
+                }
+                
             }
-            
-            if answersForThisQuestion != []{
-                answerArray.append(answersForThisQuestion)
-                answersForThisQuestion = []
-            }
-            
         }
+        
+
         
     }
     
@@ -148,17 +152,23 @@ class QuizzViewModel: ObservableObject {
     // Method to create an array of questions
     private func createQuestionsArray(){
         //Append each question in the array
-        for i in 0...9 {
-            questionArray.append(quizzResponse?.results[i].question.decoded ?? "Question")
+        if quizzResponse?.results.count ?? 0 > 0 {
+            for i in 0...9 {
+                questionArray.append(quizzResponse?.results[i].question.decoded ?? "Question")
+            }
         }
+
     }
     
     // Method to create an array of questions
     private func createDifficultyArray(){
         //Append each question in the array
-        for i in 0...9 {
-            difficultyArray.append(quizzResponse?.results[i].difficulty ?? "easy")
+        if quizzResponse?.results.count ?? 0 > 0 {
+            for i in 0...9 {
+                difficultyArray.append(quizzResponse?.results[i].difficulty ?? "easy")
+            }
         }
+        
     }
     
 }
